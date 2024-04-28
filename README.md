@@ -28,7 +28,8 @@ This project provides a Devowelizer service, which removes vowels from input str
 
 ## Bugs
 1. Capitalized letters are not devowelized.
-2. Performance issues have been observed.
+2. The localhost fails to respond when a huge input string is provided.
+3. Performance issues have been observed.
 
 ## Automation Solution
 - Implemented retry logic to retry failed test cases up to 3 times.
