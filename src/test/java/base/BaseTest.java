@@ -15,49 +15,46 @@ import io.restassured.specification.RequestSpecification;
 
 public class BaseTest {
 
+//	 The path to the configuration properties file.
 	private String configFilePath = System.getProperty("user.dir") + "\\resources\\config.properties";
-	
-	private String excelFilePath = System.getProperty("user.dir") + "\\resources\\testCases.xlsx";
-	
 
+	/**
+	 * 
+	 * Sets up the test environment before executing any test methods. It builds a
+	 * RequestSpecification with the base URI obtained from the config.properties
+	 * file.
+	 */
 	@BeforeTest
 	public void setup() {
 		RequestSpecification spec = new RequestSpecBuilder().
 				setBaseUri(getProperty("url")).
 				build();
 	}
-	
+
+	/**
+	 * 
+	 * Reads the property configuration file and retrieves the value associated with
+	 * the specified key.
+	 * 
+	 * @param key The key whose associated value is to be retrieved.
+	 * @return The value associated with the specified key, or null if the key is
+	 *         not found.
+	 */
 	public String getProperty(String key) {
 
 		Properties prop = new Properties();
 		try {
 			prop.load(new FileInputStream(configFilePath));
+
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return prop.getProperty(key); 
+		return prop.getProperty(key);
 
 	}
-	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
