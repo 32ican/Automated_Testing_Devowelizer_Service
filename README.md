@@ -22,9 +22,7 @@ This project provides a Devowelizer service, which removes vowels from input str
 
 ## Automated Tests
 - There are 3 automated tests to cover different scenarios:
-1. `SDevowelizerServiceGetInputTest`: Tests 14 different cases using data-driven testing with a provided Excel file.
-2. `StatusCodeTest`: Tests the status code returned by the Devowelizer service.
-3. `HugeInputTest`: Tests the service with a huge input string.
+- DevowelizerServiceGetInputTest`: Tests 14 different cases using data-driven testing with a provided Excel file.
 
 ## Bugs
 1. Capitalized letters are not devowelized.
@@ -34,6 +32,3 @@ This project provides a Devowelizer service, which removes vowels from input str
 ## Automation Solution
 - Implemented retry logic to retry failed test cases up to 3 times.
 
-## Contact Information
-- Email: mofid.zaki@outlook.com
-- Phone: +201203328894
